@@ -50,8 +50,7 @@ Two storage backends: local and remote. In each upload, you specify an option (e
 
 #Input/Output Format
 ##Upload:
-###java Mydedup upload <min_chunk> <avg_chunk> <max_chunk> <d> \
-    <file_to_upload> <local|remote>
+java Mydedup upload <min_chunk> <avg_chunk> <max_chunk> <d> <file_to_upload> <local|remote>
 
 ##Report Output:
 Total number of chunks in storage:
