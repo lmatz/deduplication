@@ -15,6 +15,7 @@ import MyDedup.Reference.StorageType;
 
 public class ManageAllFiles implements Serializable {
 
+
 	public class Statistics implements Serializable {
 		public int totalChunks;
 		
@@ -75,7 +76,6 @@ public class ManageAllFiles implements Serializable {
 		
 	}
 	
-	// File name -> File recipe(File recipe is used by one file to manage its related chunks)
 	
 	public Statistics dataToReport;
 	

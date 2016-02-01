@@ -9,10 +9,10 @@ import java.util.HashMap;
 
 import MyDedup.Reference.StorageType;
 
+
+// FingerPrint -> ChunkInfo
+// This class serves to manage all the information about chunks 
 public class ManageAllChunks implements Serializable {
-	
-	// FingerPrint -> ChunkInfo
-	// This class serves to manage all the information about chunks 
 
 	public HashMap<SHA,Reference> chunks;
 	

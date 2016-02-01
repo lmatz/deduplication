@@ -4,9 +4,8 @@ import java.io.IOException;
 import java.util.Iterator;
 
 
-public class CIterator implements Iterator<Content> {
-	
-	//This class serves as a iterator for iteration which is used in -> for( Type a: XXX) {something()};
+// The core of Robin Karp Algorithm
+public class CIterator implements Iterator<Content> {	
 	
 	public Stream stream;
     
@@ -44,6 +43,7 @@ public class CIterator implements Iterator<Content> {
         }
     }
 	
+
 	// iterator
 	@Override
 	public boolean hasNext() {

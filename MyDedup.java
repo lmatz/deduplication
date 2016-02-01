@@ -41,7 +41,7 @@ public class MyDedup {
             	if (fileRecipe == null){
                 	System.out.println("Error: file not exists");
                 	System.exit(0);
-	        }
+	           } 
 	            ManageAllChunks metaStore = metaData.getMetaStore();
         	    HashMap<SHA,Object> uniqueChunk = new HashMap<SHA,Object>();
 	            Object trueValue = new Object();
@@ -145,7 +145,7 @@ public class MyDedup {
                 // report the statistics
                 printDeleteReport(count, sizeCount);
             }
-	    else{
+	       else{
                 System.out.println("Invalid command: " + args[0]);
             }
         }
@@ -155,6 +155,7 @@ public class MyDedup {
         }
     }
     
+    // the directory where we put all the data in
     private static void createDataDIRIfNotExist(){
         File dataDIR = new File(dataFolder);
         if(!dataDIR.exists()){
@@ -167,6 +168,7 @@ public class MyDedup {
         }
     }
     
+
     // read the 'mydedup.meta' to get the index structure
     private static ManageAllFiles loadMetaData(){
         try{

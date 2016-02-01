@@ -9,8 +9,6 @@ import java.util.ArrayList;
 import java.util.Iterator;
 
 public class ManageOneFile implements Serializable, Iterable<SHA> {
-	
-	// this class 
 
 	public ArrayList<SHA> chunks;
 	

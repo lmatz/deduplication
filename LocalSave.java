@@ -3,21 +3,21 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 
-public class LocalSave extends Save 
-{
-	
-	// This is the class for chunk stored in local. One chunk is one file. One file is one chunk.
-	// A chunk's name is just its fingerprint (hash)
-	
+
+// This is the class for chunk stored in local. One chunk is one file. One file is one chunk.
+// A chunk's name is just its fingerprint (hash)
+public class LocalSave extends Save  {
 	
 	public String dataDir;
 
+    // get the Directory you want to save
 	public LocalSave(String dataDir) 
 	{
 		this.dataDir = dataDir+"/";
 	}
 	
-	// add a new chunk ( which is a file on local disk) from byte[] data from 'offset' with 'length'
+	// add a new chunk ( which is a file on local disk) 
+    // from byte[] data from 'offset' with 'length'
 	@Override
 	public boolean addChunk(SHA fingerPrint, byte[] data, int offset, int length) {
 		String chunkName = fingerPrint.toString();
@@ -38,7 +38,10 @@ public class LocalSave extends Save
 	// get the chunk which has the same hash as fingerPrint into buf
 	@Override
 	public int getChunk(SHA fingerPrint, byte[] buf, int offset) {
+
+        // fingerPrint is used as the file name for each chunk
 		String chunkName = fingerPrint.toString();
+
         try
 		{
             FileInputStream fileInput;
@@ -56,13 +59,13 @@ public class LocalSave extends Save
         }
 	}
 	
+
 	// find the size of the chunk which has the same hash as fingerPrint
 	@Override
 	public int sizeOfChunk(SHA fingerPrint) 
 	{
-		String chunkName;
+		String chunkName = fingerPrint.toString();
 		File chunkFile;
-		chunkName = fingerPrint.toString();
 
         chunkFile = new File(dataDir + chunkName);
         if( chunkFile.isFile() && chunkFile.exists() )
